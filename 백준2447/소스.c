@@ -1,6 +1,6 @@
 # define _CRT_SECURE_NO_WARNINGS
 # include <stdio.h>
-char array[1000][1000];
+char array[6561][6561];
 
 void star(int n) {
 	for (int i = 0; i < 1000; i++) {
