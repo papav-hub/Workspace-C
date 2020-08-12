@@ -18,12 +18,18 @@ int main() {
 	//알파벳 순서로 정수형 배열로 바꾸기
 	int m[max];
 	for (int i = 0; i < strlen(s); i++) {
-		if (s[i] == ' ') {// 공백 예외처리
-			m[i] = 0;
+
+		m[i] = s[i];
+		if (m[i] > 96 && m[i] < 123) {// 소문자
+			m[i] -= 96;
 		}
+		/*else if(m[i] > 100 && m[i] < 133){// 대문자
+			m[i] -= 100;
+		}*/
 		else {
-			m[i] = s[i] - 96;
+			m[i] = 0;// 공백 예외처리
 		}
+
 		printf("%d ", m[i]);
 	}
 	printf("\n");
