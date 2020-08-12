@@ -1,10 +1,11 @@
 # define _CRT_SECURE_NO_WARNINGS
 # include <stdio.h>
+# include <math.h>
 # define max 100
 // n과 e는 서로소 관계
 # define p 11
 # define q 3
-# define n p*q
+# define n 33
 # define e 3
 
 int main() {
@@ -25,11 +26,10 @@ int main() {
 	//암호화 C = M^e mod n
 	int c[max];
 	for (int i = 0; i < strlen(s); i++) {
-		c[i] = (m[i] ^ e) % n;
+		c[i] = (int)pow(m[i], e) % n;
 		printf("%d ", c[i]);
 	}
 	printf("\n");
-
 
 
 
@@ -46,7 +46,7 @@ int main() {
 	//복호화 M = C^d mod n
 	int M[max];
 	for (int i = 0; i < strlen(s); i++) {
-		M[i] = (c[i] ^ d) % n;
+		M[i] = (int)pow(c[i], d) % n;
 		printf("%d ", M[i]);
 	}
 	printf("\n");
@@ -55,7 +55,7 @@ int main() {
 	char result[max];
 	for (int i = 0; i < strlen(s); i++) {
 		result[i] = M[i] + 96;
-		printf("%c ", result[i]);
+		printf("%c", result[i]);
 	}
 	printf("\n");
 }
