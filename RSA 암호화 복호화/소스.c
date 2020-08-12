@@ -23,9 +23,9 @@ int main() {
 		if (m[i] > 96 && m[i] < 123) {// 소문자
 			m[i] -= 96;
 		}
-		/*else if(m[i] > 100 && m[i] < 133){// 대문자
+		else if(m[i] > 100 && m[i] < 133){// 대문자
 			m[i] -= 100;
-		}*/
+		}
 		else {
 			m[i] = 0;// 공백 예외처리
 		}
@@ -71,6 +71,15 @@ int main() {
 		else {
 			result[i] = M[i] + 96;
 		}
+		/*if (m[i] > 96 && m[i] < 123) {// 소문자
+			result[i] = M[i] + 96;
+		}
+		else if (m[i] > 100 && m[i] < 133) {// 대문자
+			result[i] = M[i] + 100;
+		}
+		else {
+			result[i] = ' ';// 공백 예외처리
+		}*/
 		printf("%c", result[i]);
 	}
 	printf("\n");
