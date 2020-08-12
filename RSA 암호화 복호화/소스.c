@@ -18,7 +18,12 @@ int main() {
 	//알파벳 순서로 정수형 배열로 바꾸기
 	int m[max];
 	for (int i = 0; i < strlen(s); i++) {
-		m[i] = s[i] - 96;
+		if (s[i] == ' ') {// 공백 예외처리
+			m[i] = 0;
+		}
+		else {
+			m[i] = s[i] - 96;
+		}
 		printf("%d ", m[i]);
 	}
 	printf("\n");
@@ -54,7 +59,12 @@ int main() {
 	//다시 문자열로
 	char result[max];
 	for (int i = 0; i < strlen(s); i++) {
-		result[i] = M[i] + 96;
+		if (M[i] == 0) { // 공백 예외처리
+			result[i] = ' ';
+		}
+		else {
+			result[i] = M[i] + 96;
+		}
 		printf("%c", result[i]);
 	}
 	printf("\n");
