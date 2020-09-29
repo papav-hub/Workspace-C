@@ -9,5 +9,5 @@ int main() {
 	int aa = atoi(a);
 	int bb = atoi(b);
 	int result = aa + bb;
-	printf("%d", result);
+	printf("%d", result); 
 }
